@@ -1,0 +1,206 @@
+{
+  "info": {
+    "name": "Contact Management System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Contact Service",
+      "item": [
+        {
+          "name": "Get All Persons",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5002/api/Person",
+              "host": ["localhost:5002"],
+              "path": ["api", "Person"]
+            }
+          }
+        },
+        {
+          "name": "Get Person by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5002/api/Person/{{personId}}",
+              "host": ["localhost:5002"],
+              "path": ["api", "Person", "{{personId}}"]
+            }
+          }
+        },
+        {
+          "name": "Create Person",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://localhost:5002/api/Person",
+              "host": ["localhost:5002"],
+              "path": ["api", "Person"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Ahmet\",\n  \"lastName\": \"Yılmaz\",\n  \"company\": \"Setur\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Update Person",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "http://localhost:5002/api/Person/{{personId}}",
+              "host": ["localhost:5002"],
+              "path": ["api", "Person", "{{personId}}"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Updated Name\",\n  \"lastName\": \"Updated Surname\",\n  \"company\": \"Updated Company\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Delete Person",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:5002/api/Person/{{personId}}",
+              "host": ["localhost:5002"],
+              "path": ["api", "Person", "{{personId}}"]
+            }
+          }
+        },
+        {
+          "name": "Get Person Contact Infos",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5002/api/ContactInfo/{{personId}}",
+              "host": ["localhost:5002"],
+              "path": ["api", "ContactInfo", "{{personId}}"]
+            }
+          }
+        },
+        {
+          "name": "Get Contact Info by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5002/api/ContactInfo/id/{{contactInfoId}}",
+              "host": ["localhost:5002"],
+              "path": ["api", "ContactInfo", "id", "{{contactInfoId}}"]
+            }
+          }
+        },
+        {
+          "name": "Add Contact Info",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://localhost:5002/api/ContactInfo",
+              "host": ["localhost:5002"],
+              "path": ["api", "ContactInfo"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"personId\": \"{{personId}}\",\n  \"infoType\": 1,\n  \"infoContent\": \"05551234567\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Update Contact Info",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "http://localhost:5002/api/ContactInfo",
+              "host": ["localhost:5002"],
+              "path": ["api", "ContactInfo"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"{{contactInfoId}}\",\n  \"personId\": \"{{personId}}\",\n  \"type\": 1,\n  \"value\": \"Updated Contact Info\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Delete Contact Info",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:5002/api/ContactInfo/{{contactInfoId}}",
+              "host": ["localhost:5002"],
+              "path": ["api", "ContactInfo", "{{contactInfoId}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Report Service",
+      "item": [
+        {
+          "name": "Get All Reports",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5001/api/Report",
+              "host": ["localhost:5001"],
+              "path": ["api", "Report"]
+            }
+          }
+        },
+        {
+          "name": "Get Report by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5001/api/Report/{{reportId}}",
+              "host": ["localhost:5001"],
+              "path": ["api", "Report", "{{reportId}}"]
+            }
+          }
+        },
+        {
+          "name": "Create Report",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://localhost:5001/api/Report",
+              "host": ["localhost:5001"],
+              "path": ["api", "Report"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"location\": \"Istanbul\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+} 
